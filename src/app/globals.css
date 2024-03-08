@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Global Styles */
+  html {
+    @apply overflow-x-hidden scroll-smooth;
+  }
+
+  body {
+    @apply transition-element m-0 min-w-[500px] overflow-x-hidden p-0 font-rubik text-black;
+  }
+
+  img {
+    @apply max-w-full select-none;
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-touch-callout: none;
+  }
+
+  button,
+  input {
+    @apply focus:outline-none;
+  }
+
+  ol,
+  ul {
+    list-style: initial;
+  }
+
+  select {
+    @apply outline-none focus:outline-none;
+  }
+
+  /* Headings & Subtitles */
+  h1 {
+    @apply text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-5xl font-bold;
+  }
+
+  h3 {
+    @apply text-4xl font-bold;
+  }
+
+  h4 {
+    @apply text-3xl font-bold;
+  }
+
+  h5 {
+    @apply text-2xl font-semibold;
+  }
+
+  h6 {
+    @apply text-xl font-medium;
+  }
+
+  p {
+    @apply !block whitespace-pre-line text-base font-normal;
+  }
+
+  .subtitle1 {
+    @apply text-lg font-medium;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-blue-300;
+  }
+
+  ::-moz-selection {
+    @apply bg-blue-300;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .button {
+    @apply flex cursor-pointer items-center justify-center rounded-md border-2 border-black px-8 py-3 text-xl font-medium;
+  }
+
+  /* Cards */
+  .card {
+    @apply flex flex-col rounded-lg border-2 border-black bg-white p-6 shadow-lg;
+  }
+
+  /* Icons */
+  .x-icon {
+    @apply icon h-6 w-6 bg-[url('/assets/icons/x.svg')];
+  }
+
+  /* Backgrounds */
+  .bg {
+    @apply min-h-screen bg-[url('/assets/backgrounds/main.png')] bg-cover bg-fixed bg-center bg-no-repeat;
+  }
+
+  /* Modals */
+  .modal-overlay {
+    @apply side-padding fixed left-0 top-0 z-50 flex h-full w-full flex-col items-center justify-center bg-gray-500/50 backdrop-blur-sm;
+  }
+
+  /* Misc */
+  .truncate-2-lines {
+    @apply truncate-lines;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@layer utilities {
+  .icon {
+    @apply cursor-pointer bg-contain bg-center bg-no-repeat;
+  }
+
+  .transition-element {
+    @apply transition-all duration-75 ease-linear;
+  }
+
+  .side-padding {
+    @apply px-[5%] md:px-[10%];
+  }
+
+  .line {
+    @apply h-px w-full bg-black;
+  }
+
+  .truncate-lines {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+  }
+
+  .show-scrollbar {
+    overflow-y: scroll !important;
+  }
+
+  .hide-scrollbar {
+    overflow: hidden !important;
+  }
+}
+
+/* Custom Scrollbar  */
+/* Firefox  */
+/* \* {
+  scrollbar-width: thin;
+  scrollbar-color: #6b6b6b transparent;
+}  */
+
+/* Chrome, Edge, and Safari */
+/* html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 9px !important;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-right: 4px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  border: none !important;
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+
+::-webkit-scrollbar-thumb {
+  border-right: 4px transparent solid;
+  background-clip: padding-box;
+  border-radius: 8px;
+  background-color: #6b6b6b;
+  padding-top: 8px;
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4c4b4b;
+} */
